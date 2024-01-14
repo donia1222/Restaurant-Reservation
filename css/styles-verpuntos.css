@@ -1,0 +1,324 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #puntos-container {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+#qrcode-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: -30px;
+}
+    #qrcode-container canvas {
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+html {
+    background-color: #009688;
+    padding-bottom: 20px;
+    background-image: url(https://app.hundezonen.ch/docs/aimexican-coloured-elements.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img {
+    background-color: #fffefd;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+h1 {
+   text-align: left;
+    margin: 30px 0;
+    font-family: 'Merienda', sans-serif;
+    color: #b6ff60;
+    font-size: 21px;
+    margin-left: 10px;
+    text-align: center;
+}
+label {
+    font-family: alata;
+    color: #f4f4f4;
+    font-size: 16px;
+    margin-left: 10px;
+    text-align: center;
+}
+div#puntos-container {
+    font-family: 'Merienda', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #ffffff40;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 95%;
+    padding: 10px;
+    border-radius: 20px;
+}
+button {
+    background-color: #24262582;
+    color: #95e22d;
+    cursor: pointer;
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #95e22d;
+    font-size: 16px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    font-family: 'Alata';
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+input[type="email"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Alata';
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.fa-arrow-left:before {
+    content: "\f060";
+    position: fixed;
+    top: 22px;
+    left: 22px;
+    font-size: 21px;
+    color: #6c6c6c;
+    cursor: pointer;
+    background-color: #f4433600;
+    padding: 12px;
+    border-radius: 90px;
+}
+/* Estilos para el ícono de interrogación */
+i.fa-question-circle {
+    position: fixed;
+    top: 22px;
+    right: 20px;
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+    background-color: #1aab9e;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  width: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Estilos adicionales para el contenido del modal */
+.modal-content h2 {
+    font-size: 25px;
+    color: #1aab9e;
+    margin-bottom: 10px;
+    font-family: 'Merienda', sans-serif;
+}
+
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    font-family: alata;
+}
+img#imagen_myModal {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+button:hover {
+    background-color: #45a04900;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+button#verificarEmailBtn {
+    margin-top: 30px;
+    color: #009688;
+    border: 1px solid #eeeeee00;
+    background-color: white;
+}
+input#codigo-input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Alata';
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.circulo-lleno, .circulo-vacio, .circulo-regalo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 5px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.circulo-lleno {
+    background-color: #3a4b23;
+    color: #8df317;
+    height: 37px;
+    width: 37px;
+}
+
+.circulo-vacio {
+    display: inline-flex;
+    background-color: #3a4b232e;
+    border: 1px solid #95e22d;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: -11px;
+    margin-left: 10px;
+}
+
+.circulo-regalo-alcanzado {
+    background-image: url(https://app.hundezonen.ch/docs/giftty.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 70px;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: white;
+    padding: 5px;
+    border: 3px solid #95e22d;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+.circulo-regalo-no-alcanzado {
+    background-image: url(https://app.hundezonen.ch/docs/previseedddw.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 90px;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #ffffff00;
+    padding: 5px;
+    border: 3px solid #ffffff00;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.circulo {
+    box-sizing: border-box;
+}
+
+.puntos-box {
+    background-color: #2c2c2ca3;
+    color: #95e22d;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid #95e22d;
+}
+
+.puntos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#main-container {
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+    background-color:  #009688;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }

@@ -1,0 +1,727 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f500;
+    padding: 1px;
+    display: block;
+    margin: auto;
+    width: 90%; /* Asegurarse de que el body tenga un ancho completo */
+    margin: auto; /* Centrar el contenido */
+    max-width: 1200px; /* Establece un ancho máximo de 1200px */
+    height: 80%;
+    border-radius: 20px;
+    margin-top: -80px;
+    font-family: 'Hoefler Text', serif;
+    touch-action: manipulation; /* Evita el zoom táctil en algunos navegadores */
+    zoom: 1; /* Desactiva el zoom en Internet Explorer */
+    margin-bottom: 30px;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+div {
+    background-color: #fff0;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 0%);
+}
+
+h2 {
+    color: s#8be3b39e;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 21px;
+    font-family: 'Merienda', sans-serif;
+}
+h2#titulo-reservierung {
+    font-size: 26px;
+    color: #0c8b6c;
+}
+h3 {
+  color: #757272;
+    font-size: 26px;
+    margin-top: -5px;
+    font-family: 'Merienda', sans-serif;
+    
+}
+h4 {
+    font-size: 18px;
+    color: #0a7f7584;
+    font-family: 'Merienda', sans-serif;
+}
+h6 {
+    font-size: 15px;
+    font-family: merienda;
+    color: #0a7f75;
+    font-weight: 100;
+}
+h5 {
+    color: #016f64;
+    font-size: 18px;
+    font-family: 'Merienda', sans-serif;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: -15px;
+    font-weight: 100;
+}
+a {
+    color: #454343;
+    font-family: 'Merienda', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+a#telefono-link {
+    color: #604646;
+}
+
+button, select, input[type="date"], input[type="text"], input[type="email"], input[type="tel"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+button {
+  background-color: #28a745; /* Verde */
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838; /* Verde más oscuro al pasar el cursor */
+}
+
+button.secondary {
+  background-color: #007bff; /* Azul */
+}
+
+button.secondary:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+#confirmacion {
+  color: green;
+}
+
+/* Estilos para el modal */
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+#modal h3 {
+  margin-top: 0;
+}
+
+#modal button {
+    margin-top: 10px;
+    background-color: #28a74500;
+}
+div#reserva {
+  width: 100%;
+  display: block;
+  margin: auto;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-left: -20px;
+  margin-top: -80px;
+}
+
+input[type="date"] {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+}
+
+input[type="date"]::before {
+  content: '📅';  /* puedes cambiar el ícono del calendario */
+  color: #007BFF;
+  margin-right: 10px;
+}
+
+input[type="date"]:hover, input[type="date"]:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px #007BFF;
+}
+
+.ui-datepicker .highlight {
+  background: #ff0;
+  color: #f00;
+}
+
+#modal-overlay-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+#modal {
+    background-color: #078e81;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+    max-width: 500px;
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-left: 50px;
+    border-radius: 10px;
+}
+/* Estilos para el modal de reserva por teléfono */
+#telefono-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#telefono-modal {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 70%;
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    margin-top: 50%;
+    margin-left: 20px;
+    font-family: alata;
+    font-size: 18px;
+}
+
+div#confirmacion {
+    text-align: center;
+    font-family: alata;
+    font-size: 18px;
+    margin-top: -40px;
+    background-color: #7fffd400;
+    border-radius: 10px;
+}  
+
+/* Add CSS to style the Lottie animation */
+#confirmation-animation-container lottie-player {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+p#detalles-reserva {
+    color: #07645b;
+    background-color: #ffffff1c;
+    padding: 10px;
+    border-radius: 20px;
+    display: block;
+    margin: auto;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 100%;
+    margin-left: -10px;
+}
+
+html {
+    background-color: #00968700;
+    width: 99%; /* Asegurarse de que cubre todo el viewport */
+    height: 100%; /* Asegurarse de que cubre todo el viewport */
+    background-image: url(https://app.hundezonen.ch/docs/tasty-cooked-food.jpg); /* Imagen por defecto para pantallas pequeñas */
+    background-repeat: no-repeat;
+    display: flex; /* Flexbox para centrar contenido del body */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Query para pantallas más grandes */
+@media (min-width: 768px) { /* Por ejemplo, se cambiará la imagen para pantallas con un ancho mínimo de 768px */
+    html {
+        background-image: url(https://app.hundezonen.ch/docs/mexican-chicken-quesadillas-with-cheese-peppers-isolated-white-background.jpg); /* Imagen para pantallas grandes */
+    }
+}
+
+img {
+    display: block;
+    margin: auto;
+    margin-top: -10px;
+    background-color: #ffffff00;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+input#datepicker {
+    border-radius: 10px;
+    font-family: 'Alata';
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+div#info-seleccionada {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: 'Alata';
+    color: #07574f;
+    font-size: 16px;
+    background-color: #ffffff00;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: -30px;
+}  
+div#paso4 {
+    margin-top: -30px;
+}
+select#personas-input {
+    border-radius: 10px;
+    font-family: 'Alata';
+    color: #8f8f8f;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+button#boton_volver {
+    background-color: #28a74500;
+    color: #009688;
+    cursor: pointer;
+    border: 1px solid #009688;
+	display: block;
+    margin: auto;
+    margin-top: 40px;
+}
+button#boton_paso3 {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #009688;
+    font-size: 16px;
+    font-family: 'Alata';
+}	
+button#abrir-modal-btn {
+    background-color: #009688;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #009688;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+}
+.ui-datepicker {
+  font-size: 12px; /* Adjust the font size for better mobile display */
+  width: 100% !important; /* Set the width to fill the screen */
+  max-width: 300px; /* Limit the maximum width to prevent it from taking up too much space */
+  margin: 0 auto; /* Center the datepicker horizontally */
+}
+
+.ui-datepicker-header {
+  font-size: 16px; /* Increase the font size of the header for better visibility */
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+  font-size: 12px; /* Adjust the font size of the navigation buttons */
+}
+
+.ui-datepicker-calendar td a {
+  padding: 5px; /* Increase the padding around each date for better touch target */
+}
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: 0.2em 0;
+    background-color: #2f9e93;
+    color: white;
+    font-family: 'Alata';
+    border-radius: 10px;
+}
+.ui-datepicker table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 0.4em;
+    font-family: alata;
+    font-size: 14px;
+    border-radius: 10px;
+}	
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid #c5c5c500;
+    background: #009688;
+    font-weight: normal;
+    color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: 50%;
+    margin-top: -8px;
+    background-color: #ffffff00;
+    border-radius: 50px;
+}
+.bloque {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc0;
+    text-align: center;
+    color: #303030;
+    font-family: alata;
+    border-radius: 20px;
+   background-color: #e0e0e0e9;
+
+}
+
+    .bloque i {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+button#miBoton {
+    width: 20%;
+    border-radius: 10px;
+    display: block;
+    margin-left: 0px;
+    background-color: #00968800;
+    color: #6e7272;
+    border: 1px solid #00968800;
+    font-size: 18px;
+    font-family: 'Alata';
+}
+h2#reservaConfirmada {
+    color: white;
+    background-color: #009688;
+    width: 80%;
+    padding: 5px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 21px;
+    margin-bottom: 30px;
+    display: none;
+}
+.fa-clock:before {
+    content: "\f017";
+    font-size: 36px;
+    color: #757272;
+}
+.fa-map-marked-alt:before {
+    content: "\f5a0";
+    font-size: 36px;
+    color: #757272;
+}
+div#ui-datepicker-div {
+    display: block;
+    margin: auto;
+    margin-left: -10px;
+}
+div#modal-personas-content {
+    margin-top: -60px;
+}
+.personas-btn {
+    background-color: #f8f8f8;
+    color: #009688;
+    cursor: pointer;
+    border: 1px solid #00968800;
+}
+button {
+    font-family: alata;
+} 
+p {
+    font-family: 'Merienda', sans-serif;
+}
+
+div#modal {
+    margin: auto;
+    color: white;
+}
+.input-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-icon-container input {
+    text-align: center;
+}
+.fa-calendar-alt:before, .fa-calendar-days:before {
+    content: "\f073";
+    margin-right: 5px;
+    margin-left: 2px;
+    font-size: 26px;
+    color: #0b5851;
+}
+div#modal-content {
+    padding: 0px;
+    margin-top: 20px;
+}
+button#horas {
+    border: 1px solid #ddd0;
+    color: #ffffff;
+    font-size: 16px;
+    top: 10px;
+    font-family: revert;
+}
+button#boton_cerrar {
+    border: 1px solid #ddd0;
+    color: #ffffff;
+    font-size: 16px;
+    top: 10px;
+    font-family: revert;
+}
+
+button#puntosEnlace {
+    width: 20%;
+    border-radius: 10px;
+    display: block;
+    margin-right: 10px;
+    background-color: #39393900;
+    border: 1px solid #00968800;
+    font-size: 18px;
+    font-family: 'Alata';
+    text-align: center;
+}
+#horas_mediadia {
+  background-color: #f0f0f0;
+}
+
+#horas_noche {
+  background-color: #000;
+  color: #fff;
+}
+
+div#ui-datepicker-div {
+    display: none;
+}
+button#addToCalendarButton {
+    margin-top: -80px;
+}
+.fa-star:before {
+    content: "\f005";
+    color: #FF9800;
+    font-size: 21px;
+}
+
+button#miBoton {
+    display: none; 
+  }
+  
+ .menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu {
+    background-color: #f0f0f085;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
+.hidden {
+  display: none;
+} 
+button#show-notification {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    background-color: #009688;
+    border: 1px solid #ddd0;
+}  
+button#install-btn {
+    background-color: #009688;
+    border: 1px solid #ddd0;
+    color: #ffffff;
+}
+h2#miId {
+    color: #E91E63;
+}
+button#close-btn {
+    background-color: #f5f5f500;
+    border: 1px solid #ddd0;
+    color: #9f9696;
+}
+.ion-fork:before {
+    content: "\f27a";
+    font-size: 30px;
+    margin-right: 5px;
+}
+.ion-knife:before {
+    content: "\f297";
+    font-size: 30px;
+}
+.fa-home:before, .fa-house:before {
+    content: "\f015";
+    position: absolute;
+    font-size: 19px;
+    color: #009688;
+    cursor: pointer;
+    background-color: #1aab9e00;
+    padding: 20px;
+    border-radius: 50px;
+}
+.status-container {
+    margin-top: 20px;
+    border: 1px solid #ddd0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f4f4f438;
+}
+
+a#icono-volver {
+    position: absolute;
+    font-size: 21px;
+    color: #009688;
+    cursor: pointer;
+    background-color: #1aab9e00;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+    .status-circle {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    #descarga-visita {
+    color: #ffffff;
+    background-color: #009688c9;
+    padding: 7px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 64%;
+    border: 1px solid #73ffff00;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#descarga-visita:hover {
+transform: scale(1.1) rotate(-5deg);
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+#toggle-menu-btn {
+  color: #ffffff;
+    background-color: #009688c9;
+    padding: 7px 10px;
+    text-decoration: none;
+    width: 64%;
+    border: 1px solid #73ffff00;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+#toggle-menu-btn:hover {
+    color: #15b7b7b3;
+    background-color: #f4f4f438;
+    padding: 7px 10px;
+    text-decoration: none;
+    width: 64%;
+    border: 1px solid #73ffff00;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+.status-circle {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.status-container {
+    display: none;
+}
+p#aviso-cierre {
+    color: #a81345;
+}
+
+.rot {
+  background-color: red;
+}
+
+.gelb {
+  background-color: yellow;
+}
+
+.grün {
+  background-color: green;
+}
+
+
+    .green {
+        background-color: green;
+    }
+
+    .yellow {
+        background-color: yellow;
+    }
+
+    .red {
+        background-color: #ff4747;
+    }
+   
+    
+    
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-only, .print-only * {
+    visibility: visible;
+  }
+  
+  .print-only {
+    /* Agrega aquí estilos adicionales para asegurarte de que los detalles se muestren de manera adecuada en la impresión */
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/reservas.css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Alata&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />	
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ <a href="analizar_puntos.html" class="mi-boton">Analizar puntos</a>
+<img src="https://app.hundezonen.ch/docs/cantina2png.png" alt="Description of the image">
+  <div id="codeInput" style="display: block;">
+    <label for="code">Ingresa el código de acceso:</label>
+    <input type="text" id="code" pattern="[0-9]*" inputmode="numeric">
+
+    <button id="btnSubmitCode">Enviar</button>
+  </div>
+  
+
+<div id="main-container">
+ <h2>Bloquear una Fecha</h2>
+<div id="fechas_nput" style="display: block;">
+<input type="date" id="fecha-bloquear">
+<button id="bloqueardesactivar-modal" onclick="bloquearFecha()">Bloquear fecha</button>
+
+<div id="fechasBloqueadas"></div>
+  </div>
+ 
+
+<form id="form-cambiar-mensaje">
+ <h2>Mensaje y Estados</h2>
+  <label for="nuevo-mensaje"></label>
+ <input type="text" id="nuevo-mensaje" placeholder="Introduce tu mensaje aquí" required>
+  <!-- Cambiar el tipo de botón a "button" en lugar de "submit" -->
+</form> 
+<h3>  </h3>
+<div class="text-block">
+  <p data-copy="text1">Bitte reservieren Sie heute telefonisch!</p>
+  <p data-copy="text2">Wir können für heute leider keine Reservierungen mehr entgegen nehmen.</p>
+  <p data-copy="text3">Es gibt nur noch wenig freien Platz für heute; 
+bitte reservieren Sie telefonisch!</p>
+</div>
+
+<div id="confirmation" style="display: none;">Copiado correctamente</div>
+<button type="button" onclick="cambiarMensaje()">Publicar Mensaje</button>
+<button id="btn-desactivar-modal" onclick="desactivarModal()">Desactivar Mensaje</button>
+
+  
+<div class="semana-form">
+  
+  <form id="semanaForm" action="actualizar_semana.php" method="post">
+    <h2>Actualizar Menu de la Semana</h2>
+    <label for="fecha">Fecha de la semana (Ejemplo: 23 al 27 de agosto):</label>
+    <input type="text" id="fecha" name="fecha" required><br>
+
+    <label for="titulo_mi">Título Miércoles:</label>
+    <input type="text" id="titulo_mi" name="titulo_mi" required><br>
+    <label for="descripcion_mi">Descripción Miércoles:</label>
+    <textarea id="descripcion_mi" name="descripcion_mi" required></textarea><br>
+
+    <label for="titulo_do">Título Jueves:</label>
+    <input type="text" id="titulo_do" name="titulo_do" required><br>
+    <label for="descripcion_do">Descripción Jueves:</label>
+    <textarea id="descripcion_do" name="descripcion_do" required></textarea><br>
+
+    <label for="titulo_fr">Título Viernes:</label>
+    <input type="text" id="titulo_fr" name="titulo_fr" required><br>
+    <label for="descripcion_fr">Descripción Viernes:</label>
+    <textarea id="descripcion_fr" name="descripcion_fr" required></textarea><br>
+
+    <label for="quesadilla_titulo">Título Quesadilla:</label>
+    <input type="text" id="quesadilla_titulo" name="quesadilla_titulo" required><br>
+    <label for="quesadilla_descripcion">Descripción Quesadilla:</label>
+    <textarea id="quesadilla_descripcion" name="quesadilla_descripcion" required></textarea><br>
+
+    <input type="submit" value="Actualizar Menu">
+  </form>
+</div>
+
+
+ 
+  <h2 id="reservas">Reservas</h2>
+  <div id="content" style="display: none;">
+    <button id="btnHoy">Reservas para hoy</button>
+  <button id="btnSemana">Reservas de esta semana</button>
+    <button id="btnTodas">Ver todas las reservas</button>
+  </div>  
+<div id="search-container">
+    <input type="text" id="search" onkeyup="buscarReserva()" placeholder="Buscar por nombre o fecha...">
+</div>
+    
+<div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Pers</th>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se mostrarán las reservas -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- El modal para mostrar el email -->
+  <div id="emailModal" style="display: none; position: fixed; width: 200px; height: 100px; background: black; border: 1px solid black; padding: 10px; left: calc(50% - 100px); top: calc(50% - 50px); text-align: center;">
+    <p id="emailText"></p>
+  </div>
+</div>
+<script src="js/reservas.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+
+    body {
+        margin: 0;
+        font-family: 'Alata', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    button, input[type="submit"] {
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #009688;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: block;
+        margin: 15px auto;
+    }
+
+    button:hover, input[type="submit"]:hover {
+        background-color: #00796b;
+    }
+
+#main-container, #codeInput, .form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: fixed;
+}
+
+    h2, h3 {
+        text-align: center;
+        color: #03574f;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        color: #5c6564;
+        font-size: 18px;
+    }
+
+input, textarea {
+    width: calc(100% - 16px);
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+    .table-container {
+        overflow-y: auto;
+        max-height: 500px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .text-block p {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .text-block p:hover {
+        background-color: #eee;
+    }
+
+    #search-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+input#search {
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form#semanaForm {
+    background-color: #dbf4f2;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+
+.mi-boton {
+    background-color: #4746461a;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    color: #2b2b2b;
+    margin-left: 10px;
+}
+    .mi-boton:hover {
+        background-color: #45a049;
+    }
+
+    .boton {
+        background-color: #4caf50;
+        color: white;
+        border: 1px solid #096f66;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .boton:hover {
+        background-color: #009688;
+        color: white;
+        border-color: #00796b;
+    }
+
+h2 {
+    margin-top: 60px;
+    background-color: #58585800;
+    color: black;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    margin: 20px auto 20px;
+}
+
+    textarea {
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .text-block p {
+        cursor: pointer;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f8f8f8;
+        transition: background-color 0.3s;
+        color: #a2a2a2;
+    }
+
+    .text-block p:hover {
+        background-color: #eee;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 20px;
+        color: #03574f;
+        margin: 20px 0;
+    }
+
+    #fechas_nput, div#fechasBloqueadas {
+        background-color: #dbdbdb00;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    #fechasBloqueadas {
+        background-color: #c6c6c600;
+        color: #ff0202;
+    }
+
+    #emailModal {
+        background-color: aqua;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        display: none;
+    }
+
+

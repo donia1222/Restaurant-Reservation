@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+ <link rel="icon"https://app.hundezonen.ch/docs/favicon-32x32.png" type="image/x-icon">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#ebefee">
+ <link rel="manifest" href="/manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Alata&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hoefler+Text&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+  <title>Sistema de Reservas</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" media="(min-width: 481px)">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a href="https://cantinatexmex.ch" target="_blank" id="miBotone" ><i  class="fas fa-home"></i></a>
+  <button id="puntosEnlace">
+    <a href="php/ver_mis_puntos" target="_blank">
+      <i class="fas fa-star"></i>Punkte
+    </a>
+  </button>
+
+  <!-- Contenido de la página del modal -->
+  <div id="modal" style="display: none;">
+    <p id="modal-message"></p>
+    <button id="boton_cerrar" onclick="cerrarModalMensaje()">X</button>
+  </div>
+
+  <button type="button" id="miBoton"><i class="fas fa-arrow-left"></i></button>
+
+  <div id="telefono-modal-overlay" style="display: none;">
+    <div id="telefono-modal">
+      <h3>Ab 15 Personen telefonisch</h3>
+      <p>Ruf an: <a id="telefono-link" href="tel:+41817501911">+41817501911</a></p>
+    </div>
+  </div>
+
+  <div id="info-seleccionada">
+    <p id="fecha-seleccionada"></p>
+    <p id="hora-seleccionada"></p>
+    <p id="personas-seleccionadas"></p>
+  </div>
+
+
+  <form id="reserva-form" action="https://reservierung.cantinatexmex.ch/enviar_email.php" method="post">
+
+    <div id="reserva">
+      <img src="https://app.hundezonen.ch/docs/cantina.png" alt="Description of the image">
+      <h5>Tex-Mex Restaurant</h5>
+      <div class="input-icon-container">
+        <input type="text" id="datepicker" name="fecha-seleccionada" placeholder="Wählen Sie hier das Datum " readonly>
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+    </div>
+
+    <div id="paso2" style="display: none;">
+      <button type="button" onclick="abrirModal()" id="abrir-modal-btn">Ühr wählen</button>
+      <input type="hidden" id="hora-input" name="hora-seleccionada">
+      <button type="button" id="boton_volver" onclick="volverPaso1()">Zurück</button>
+    </div>
+
+    <div id="paso3" style="display: none;">
+      <button type="button" onclick="abrirModalPersonas()">Wähle die Anzahl der Personen</button>
+      <input type="hidden" id="personas-input" name="personas-seleccionadas">
+      <button type="button" id="boton_volver" onclick="volverPaso2()">Zurück</button>
+    </div>
+
+<!-- Modal de Personas -->
+<div id="modal-personas-overlay" style="display: none;">
+  <div id="modal-personas">
+    <div id="modal-personas-content">
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(1)"><i class="fas fa-user"></i> 1 Person</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(2)"><i class="fas fa-users"></i> 2 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(3)"><i class="fas fa-users"></i> 3 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(4)"><i class="fas fa-users"></i> 4 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(5)"><i class="fas fa-users"></i> 5 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(6)"><i class="fas fa-users"></i> 6 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(7)"><i class="fas fa-users"></i> 7 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(8)"><i class="fas fa-users"></i> 8 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(9)"><i class="fas fa-users"></i> 9 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(10)"><i class="fas fa-users"></i> 10 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(11)"><i class="fas fa-users"></i> 11 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(12)"><i class="fas fa-users"></i> 12 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(13)"><i class="fas fa-users"></i> 13 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(14)"><i class="fas fa-users"></i> 14 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(15)"><i class="fas fa-users"></i> 15 Personen</button>
+      <button type="button" class="personas-btn" onclick="seleccionarPersonas(16)"><i class="fas fa-users"></i> 16 Personen</button>
+    </div>
+    <button type="button" class="close-button" onclick="cerrarModalPersonas()">Schließen</button>
+  </div>
+</div>
+
+
+  </div>
+
+  <div id="paso4" style="display: none;">
+    <h2>Geben Sie Ihre Kontaktinformationen ein</h2>
+    <input type="text" id="nombre-input" name="Nombre" placeholder="Name">
+    <input type="email" id="email-input" name="Email" placeholder="E-mail">
+    <input type="tel" id="telefono-input" name="Teléfono" placeholder="Telefon">
+     <button id="boton_paso3" onclick="confirmarReserva()"> <i class="fa fa-check-circle"></i> Reservierung bestätigen </button>
+    <button type="button" id="boton_volver" onclick="volverPaso3()">Zurück</button>
+  </div>
+</form>
+
+<div id="confirmacion" style="display: none;">
+  <div id="confirmation-animation-container" style="width: 100px; height: 100px; margin: 0 auto;">
+    <lottie-player
+      src="https://lottie.host/83613cf6-56ea-4ad2-9804-d422cb871555/Wuz8whuCFI.json"
+      background="transparent"
+      speed="1"
+      style="width: 100%; height: 100%;"
+      autoplay
+      loop
+    ></lottie-player>
+  </div>
+  <h2 id="reservaConfirmada">Bestätigung</h2>
+  <div id="confirmacion" class="print-only">
+  <p id="detalles-reserva"></p>
+ </div>
+</div>
+
+ <!-- Modal de Horas -->
+<div id="modal-overlay" style="display: none;">
+  <div id="modal">
+    <div id="modal-content">
+      <h2>Selecciona una hora</h2>
+      
+      <div id="horas_mediadia">
+        <h3>Mittag</h3>
+        <button type="button" onclick="seleccionarHora('11:30')">11:30</button>
+        <button type="button" onclick="seleccionarHora('12:00')">12:00</button>
+        <button type="button" onclick="seleccionarHora('13:00')">13:00</button>
+      </div>
+
+      <div id="horas_noche">
+        <h3>Abend</h3>
+        <button type="button" onclick="seleccionarHora('18:00')">18:00</button>
+        <button type="button" onclick="seleccionarHora('18:30')">18:30</button>
+        <button type="button" onclick="seleccionarHora('19:00')">19:00</button>
+        <button type="button" onclick="seleccionarHora('19:30')">19:30</button>
+        <button type="button" onclick="seleccionarHora('20:00')">20:00</button>
+      </div>
+    </div>
+    <button id="horas" onclick="cerrarModalHorarios()">X</button>
+  </div>
+</div>
+
+<div class="bloque">
+    <i class="fas fa-clock"></i>
+    <h3>Öffnungszeiten</h3>
+<p id="aviso-cierre"></p>
+    <h4>Mittwoch bis Freitag</h4><p>11:30 - 13:30 / 18:00 - 22:00</p>
+    <h4>Dienstag und Samstag</h4> <p>18:00 - 22:00</p>
+</div>
+<!-- Wegbeschreibung Block -->
+<div class="bloque">
+    <i class="fas fa-map-marked-alt"></i>
+    <h3>So finden Sie uns</h3>
+<a href="descargarTarjetaDeVisita.vcf" download id="descarga-visita">
+  E-Visitenkarte
+  <i class="fas fa-download"></i>
+</a>
+
+<a href="/menu" id="toggle-menu-btn">Mittagsmenu <i class="ion-fork"></i><i class="ion-knife"></i></a>
+
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

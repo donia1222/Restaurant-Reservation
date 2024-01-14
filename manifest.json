@@ -1,0 +1,14 @@
+{
+  "name": "Cantina",
+  "short_name": "Cantina",
+  "description": "Reservierung",
+  "start_url": "https://reservierung.cantinatexmex.ch",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#009688",
+  "icons": [{
+    "src": "https://app.hundezonen.ch/docs/cantina192.jpg",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

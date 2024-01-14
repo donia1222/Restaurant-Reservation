@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Alata&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hoefler+Text&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/jsqr"></script>
+  <link rel="stylesheet" href="css/analizar.css" />
+  <title>Scanner de Código QR</title>
+  
+</head>
+<body>
+  <div id="codigo-container">
+    <label for="codigo-input">Introduzca el código para continuar:</label>
+   <input type="text" id="codigo-input" pattern="[0-9]*" inputmode="numeric">
+    <button id="submit-button" onclick="verificarCodigo()">Enviar</button>
+  </div>
+
+  <div id="contenido" class="hidden">
+    <h1>Scaner codigo QR</h1>
+    <div id="video-container">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div id="puntos-container"></div>
+    <label for="nuevos-puntos">Editar Puntos:</label>
+    <input type="text" id="nuevos-puntos" placeholder="Ingresa nuevos puntos" pattern="[0-9]*" inputmode="numeric">
+    <button onclick="editarPuntos()">Guardar</button>
+  </div>
+  <script src="js/analizar.js"></script>
+</body>
+</html>

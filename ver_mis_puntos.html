@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script> <!-- Agregar la librería qrcode.js -->
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Alata&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hoefler+Text&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js" integrity="sha512-VniaG10BdQI7E4qt+K3N6OvTxRDX9kCnu8kJ6JUwSCkC4A2pFJISxA9hOlcjYs4PS6nQNl5MGzZPz6KIU0RlwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registrado con éxito:', registration.scope);
+        })
+        .catch(error => {
+          console.error('Error al registrar el Service Worker:', error);
+        });
+    });
+  }
+</script>
+<link rel="stylesheet" href="css/styles-verpuntos.css" />
+  <title>Ver Mis Puntos</title>
+  
+</head>
+<body>
+
+  <i class="fas fa-question-circle"></i>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Sammle Punkte!</h2>
+      <img src="https://app.hundezonen.ch/docs/previseedddw.png" id="imagen_myModal" alt="Imagen">
+      <p>Bei jeder Reservierung werden dir 10 Punkte zu deiner E-Mail-Adresse hinzugefügt. Wenn du 100 Punkte hast, kannst du sie gegen einen Geschenkgutschein im Wert von 50 Franken einlösen. Schau dir deine Punkte an, zeige den generierten QR-Code und Bestätige deine E-Mail-Adresse, wenn du zum Essen kommst. Denke daran, 100 Punkte entsprechen 50 Franken Rabatt!</p>
+    </div>
+  </div>
+ <div id="main-container">
+  <h1>Punkte bei der Tischreservierung</h1>
+  <label for="email-input"></label>
+  <input type="email" id="email-input" placeholder="E-Mail Adresse">
+  <button onclick="verPuntos()">Meine Punkte</button>
+  <div id="puntos-container"></div>
+  <div id="qrcode-container"></div> <!-- Contenedor para mostrar el código QR -->
+  <a href="/index.html" target="_blank"><i class="fas fa-arrow-left"></i></a>
+<div id="lottie-container"></div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Incluir la librería jQuery -->
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script> <!-- Incluir la librería QRCode.js -->
+  <script src="js/ver_puntos.js"></script>
+</body>
+</html>
